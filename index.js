@@ -5,14 +5,18 @@ function start(){
   const content = {}
 
   content.countKey = askAndReturnCountKey()
-  content.key = Returncharactes()
+  content.keys = Returncharactes()
 
   function askAndReturnCountKey(){
     return readline.question('Key size: ')
   }
 
   function Returncharactes(){
-    return randomize('*', content.countKey)
+    const itens = []
+    for(i=0; i<content.countKey; i++){
+      itens.push(randomize('*', content.countKey))
+    }
+    return itens
   }
 
   console.log(content)
